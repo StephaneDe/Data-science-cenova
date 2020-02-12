@@ -14,16 +14,14 @@ from sklearn.ensemble import RandomForestClassifier
 
 
 
-train=pd.read_csv(r"C:\Users\StéphaneDEHLAVICENOV\OneDrive - CENOVA\Projets\Uplfit\ope10_40_v2_export_train.csv",encoding="utf-8",sep=",",engine='python')
-holdout=pd.read_csv(r"C:\Users\StéphaneDEHLAVICENOV\OneDrive - CENOVA\Projets\Uplfit\ope10_40_v2_export_test.csv",encoding="utf-8",sep=",",engine='python')
+train=pd.read_csv(r"C:\Cenova data science\Uplfit\ope10_40_v2_export_train.csv",encoding="utf-8",sep=",",engine='python')
+holdout=pd.read_csv(r"C:\Cenova data science\Uplfit\ope10_40_v2_export_test.csv",encoding="utf-8",sep=",",engine='python')
 
 
 def process_df(df):
-    df=fonctions.process_missing(df,train)
+    
     df=fonctions.process_age(df)
-    df=fonctions.process_fare(df)
-    df=fonctions.process_cabin(df)
-    df=fonctions.process_titles(df)
+
     
     columns=[ "Age_categories", "Fare_categories","Title", "Cabin_type","Sex"]
     for col in columns:
